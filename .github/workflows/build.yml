@@ -19,5 +19,4 @@ jobs:
       with:
         python-version: '3.10'  # 自动选择最新 3.x 版本
     - run: git clone https://github.com/Class-Widgets/Class-Widgets.git
-    - run: cd Class-Widgets
-    - run: bash ./Scripts/buildOSX.sh
+    - run: bash ./Class-Widgets/Scripts/buildOSX.sh

@@ -1,0 +1,23 @@
+name: CI on macOS
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: macos-latest  # 当前最新稳定版（通常是 macOS 13）
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.19'  # 自动选择最新 3.x 版本
+    - run: git clone https://github.com/Class-Widgets/Class-Widgets.git
+    - run: cd Class-Widgets
+    - run: bash ./Scripts/buildOSX.sh
